@@ -1,0 +1,104 @@
+:root{
+    --background: #edf1f4;
+    --white:#FFFFFF;
+    --black:black;
+    --display-font:#818084;
+    --color-change:#555555;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:var(--background);
+}
+
+.calculator{
+    position: relative;
+    max-width:fit-content;
+    background-color:var(--background);
+    border-radius: 10px;
+    padding: 10px 10px 20px;
+    box-shadow: 10px 10px 30px -15px var(--black), -10px -10px 30px -15px var(--white);
+}
+.buttons{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4,1fr);
+}
+.buttons button{
+    cursor: pointer;
+    border-radius: 10px;
+    border: var(--white);
+    background-color: var(--background);
+    box-shadow: 5px 5px 12px -5px var(--black), -5px -5px 12px -5px var(--white);
+    height: 65px;
+    width: 65px;
+    color: var(--display-font);
+    font-size: 20px;
+}
+.buttons button:active{
+    transform: scale(0.95);
+}
+#equals {
+    background-color: #00b72b;
+    color: var(--white);
+}
+#del{
+    background-color: #e94949;
+    color:var(--white);
+}
+#operator{
+    background-color:#1da9fd ;
+    color: var(--white);
+}
+.display{
+    width: 100%;
+    margin-bottom: 10px;
+    padding-right: 5%;
+    height: 80px;
+    outline: none;
+    border: none;
+    text-align: right;
+    border-radius: 10px;
+    background-color: var(--background);
+    box-shadow: 5px 5px 12px -5px black inset, -5px -5px 12px -5px white inset;
+    font-size: 30px;
+    color:var(--display-font) ;
+    pointer-events: none;
+}
+.color-change{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 0;
+    top:0;
+    margin-top: 5%;
+    margin-right: 5%;
+    background-color:var(--color-change) ;
+    border-radius: 5px;
+    box-shadow: 5px 5px 12px -5px black, -5px -5px 12px -5px white;
+    cursor: pointer;
+}
+
+@media screen and (max-width:630px){
+    .buttons{
+        gap: 5px;
+
+    }
+    .buttons button{
+        width: 60px;
+        height: 60px;
+    }
+    .calculator{
+        margin-inline:5% ;
+    }
+}
